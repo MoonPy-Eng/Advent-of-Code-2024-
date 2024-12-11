@@ -1,0 +1,43 @@
+from functools import lru_cache
+import math
+
+# Splitting the digits in the number
+def split_digits(n):
+    digit_count = math.floor(math.log10(n)) + 1 if n > 0 else 1
+    middle_digit = digit_count // 2
+    if digit_count % 2 == 0:
+        div_factor = 10 ** middle_digit
+        return n // div_factor, n % div_factor
+    return None
+
+# Memoized function for counting
+@lru_cache(None)
+def count_after(steps, x):
+    if steps == 0:
+        return 1
+    if x == 0:
+        return count_after(steps - 1, 1)
+    split = split_digits(x)
+    if split:
+        l, r = split
+        return count_after(steps - 1, l) + count_after(steps - 1, r)
+    return count_after(steps - 1, 2024 * x)
+
+# Function to read space-separated integers from a string
+def read_spaced_ints(input_string):
+    return list(map(int, input_string.split()))
+
+# Part 1: using 25 steps
+def part1(input_string):
+    numbers = read_spaced_ints(input_string)
+    return sum(count_after(25, x) for x in numbers)
+
+# Part 2: using 75 steps
+def part2(input_string):
+    numbers = read_spaced_ints(input_string)
+    return sum(count_after(75, x) for x in numbers)
+
+# Main Program
+input_string = "1 24596 0 740994 60 803 8918 9405859"
+print("Part 1:", part1(input_string))
+print("Part 2:", part2(input_string))

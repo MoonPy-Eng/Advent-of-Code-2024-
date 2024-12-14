@@ -58,7 +58,7 @@ def visualize(time, positions, width, height):
 
 # Main function
 def main():
-    input_path = r'C:\Users\cplun\cwd2\envs\pymoon\Lib\site-packages\IPython\core\Advent code 2024\day14_data'
+    input_path = r'day14_data.txt'
     print(f"Attempting to read file from: {input_path}")
     guards = parse_input(input_path)
 

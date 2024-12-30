@@ -1,5 +1,7 @@
-# GitHub Codespaces ♥️ Jupyter Notebooks
 
+Notebooks contain the puzzle resolution related to AoC 2024. Please consider I am still debugging these Notebooks to deliver a final version and replicate them.
+More information about AoC here [https://adventofcode.com/2024/about]
+# GitHub Codespaces ♥️ Jupyter Notebooks
 Welcome to your shiny new codespace! We've got everything fired up and running for you to explore Python and Jupyter notebooks.
 
 You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with what you're seeing right now - where you go from here is up to you!
